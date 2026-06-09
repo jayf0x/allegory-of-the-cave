@@ -15,7 +15,14 @@ if [[ -z "$VERSION" ]]; then
   fi
 fi
 
-echo "Tagging $VERSION and pushing to trigger GitHub Pages deploy..."
+echo "Releasing $VERSION..."
+
+# Bump version in package.json and commit so main gets a new push (triggers deploy)
+bun pm pkg set "version=${VERSION#v}"
+git add package.json
+git commit -m "chore: release $VERSION"
 git tag "$VERSION"
+git push origin main
 git push origin "$VERSION"
+
 echo "Done. Watch the action at: https://github.com/jayf0x/allegory-of-the-cave-/actions"
