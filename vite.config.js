@@ -3,8 +3,8 @@ import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
 import path from 'path'
 
-export default defineConfig(({ mode }) => ({
-  base: mode === "production" ? "/allegory-of-the-cave-/" : "/",
+export default defineConfig({
+  base: process.env.BASE_PATH ?? "/",
   plugins: [
     react({
       babel: {
@@ -31,5 +31,5 @@ export default defineConfig(({ mode }) => ({
       alias: {
         '@': path.resolve(__dirname, 'src'),
       },
-    }, 
-}));
+    },
+});
