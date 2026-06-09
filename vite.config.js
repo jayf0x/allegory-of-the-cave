@@ -4,7 +4,7 @@ import tailwindcss from '@tailwindcss/vite'
 import path from 'path'
 
 export default defineConfig(({ mode }) => ({
-  base: mode === "production" ? "/jayf0x" : "/",
+  base: mode === "production" ? "/allegory-of-the-cave-/" : "/",
   plugins: [
     react({
       babel: {
