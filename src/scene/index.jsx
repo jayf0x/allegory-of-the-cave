@@ -55,7 +55,7 @@ export const Scene = ({ videoRef, isActive, captureRef }) => {
   return (
     <>
       <color attach="background" args={['#080604']} />
-      <Environment files="/stars.hdr" background />
+      <Environment files={`${import.meta.env.BASE_URL}stars.hdr`} background />
 
       <fogExp2 attach="fog" args={[fogColor, fogDensity]} />
 

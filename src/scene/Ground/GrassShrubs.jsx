@@ -11,7 +11,7 @@ export function GrassShrubs({
   scaleMax = 1.65,
 }) {
   count = 2000;
-  const { scene: gltfScene } = useGLTF('/models/grass-shurbs.glb');
+  const { scene: gltfScene } = useGLTF(`${import.meta.env.BASE_URL}models/grass-shurbs.glb`);
   const groupRef = useRef();
 
   useEffect(() => {
@@ -59,4 +59,4 @@ export function GrassShrubs({
   return <group ref={groupRef} />;
 }
 
-useGLTF.preload('/models/grass-shurbs.glb');
+useGLTF.preload(`${import.meta.env.BASE_URL}models/grass-shurbs.glb`);

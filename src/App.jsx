@@ -13,7 +13,7 @@ import { Scene } from '@/scene';
 import { pickerOpenAtom, selectedProjectAtom } from './store/cave';
 
 // Configure local Draco decoder (avoids CDN dependency)
-useGLTF.setDecoderPath('/draco/');
+useGLTF.setDecoderPath(`${import.meta.env.BASE_URL}draco/`);
 
 const cameraArgs = {
   position: [0.4656758094947514, -0.3863831343078484, 1.0565297821385193],

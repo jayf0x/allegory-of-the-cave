@@ -51,7 +51,7 @@ export const Video = () => {
 
   useEffect(() => {
     const vid = document.createElement('video');
-    vid.src = '/video.mp4';
+    vid.src = `${import.meta.env.BASE_URL}video.mp4`;
     vid.loop = true;
     vid.muted = true;
     vid.playsInline = true;

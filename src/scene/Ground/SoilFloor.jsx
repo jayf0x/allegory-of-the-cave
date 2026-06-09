@@ -3,10 +3,10 @@ import { usePBRTextures } from '@/hooks/useModel.js';
 export function SoilFloor({ groundSize = 6, groundY = -0.5, textureRepeat = 3 }) {
   const textures = usePBRTextures(
     {
-      map: '/textures/Ground068_Color.webp',
-      normalMap: '/textures/Ground068_NormalGL.webp',
-      roughnessMap: '/textures/Ground068_Roughness.webp',
-      aoMap: '/textures/Ground068_AO.webp',
+      map: `${import.meta.env.BASE_URL}textures/Ground068_Color.webp`,
+      normalMap: `${import.meta.env.BASE_URL}textures/Ground068_NormalGL.webp`,
+      roughnessMap: `${import.meta.env.BASE_URL}textures/Ground068_Roughness.webp`,
+      aoMap: `${import.meta.env.BASE_URL}textures/Ground068_AO.webp`,
     },
     textureRepeat,
   );
