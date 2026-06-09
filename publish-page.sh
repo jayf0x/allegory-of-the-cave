@@ -25,4 +25,4 @@ git tag "$VERSION"
 git push origin main
 git push origin "$VERSION"
 
-echo "Done. Watch the action at: https://github.com/jayf0x/allegory-of-the-cave-/actions"
+echo "Done. Watch the action at: https://github.com/jayf0x/allegory-of-the-cave/actions"

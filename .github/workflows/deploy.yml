@@ -30,7 +30,7 @@ jobs:
       - name: Build
         run: bun run build
         env:
-          BASE_PATH: /allegory-of-the-cave-/
+          BASE_PATH: /allegory-of-the-cave/
 
       - uses: actions/configure-pages@v5
 

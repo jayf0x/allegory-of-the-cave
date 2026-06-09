@@ -1,6 +1,6 @@
 # Allegory of the Cave
 
-> *Prisoners in Plato's cave mistake shadows on the wall for reality. The shadows are all they know.*
+> _Prisoners in Plato's cave mistake shadows on the wall for reality. The shadows are all they know._
 
 This project asks: what if an AI only ever perceives shadows?
 
@@ -14,8 +14,8 @@ The long-term goal is to give that prisoner **memory** — a world model that ac
 
 ## Why it matters
 
-Most AI perception pipelines treat each frame as isolated. There's no continuity, no model of *what exists* versus *what is currently visible*. A world model changes that. It's the difference between an AI that reacts to shadows and one that understands what's casting them.
+Most AI perception pipelines treat each frame as isolated. There's no continuity, no model of _what exists_ versus _what is currently visible_. A world model changes that. It's the difference between an AI that reacts to shadows and one that understands what's casting them.
 
 ## Demo
 
-[allegory-of-the-cave](https://jayf0x.github.io/allegory-of-the-cave-/)
+[allegory-of-the-cave](https://jayf0x.github.io/allegory-of-the-cave/)
