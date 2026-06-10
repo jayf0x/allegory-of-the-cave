@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useRef } from 'react';
 import { LinearFilter, ShaderMaterial, VideoTexture } from 'three';
+import { BASE_URL } from '@/config';
 
 const vertexShader = `
 varying vec2 vUv;
@@ -51,7 +52,7 @@ export const Video = () => {
 
   useEffect(() => {
     const vid = document.createElement('video');
-    vid.src = `${import.meta.env.BASE_URL}video.mp4`;
+    vid.src = `${BASE_URL}video.mp4`;
     vid.loop = true;
     vid.muted = true;
     vid.playsInline = true;

@@ -8,29 +8,24 @@ import { OracleSidebar } from '@/components/OracleSidebar';
 import { OracleWidget } from '@/components/OracleWidget';
 import { ProjectPicker } from '@/components/ProjectPicker';
 import { SceneLoader } from '@/components/SceneLoader';
-import { useCamera } from '@/hooks/useCamera';
+import { useCameraFeed } from '@/hooks/useCameraFeed';
 import { Scene } from '@/scene';
+import { BASE_URL, initialCameraPos } from './config';
 import { pickerOpenAtom, selectedProjectAtom } from './store/cave';
 
 // Configure local Draco decoder (avoids CDN dependency)
-useGLTF.setDecoderPath(`${import.meta.env.BASE_URL}draco/`);
-
-const cameraArgs = {
-  position: [0.4656758094947514, -0.3863831343078484, 1.0565297821385193],
-  rotation: [0.35060093165446576, 0.3924713568462487, -0.13897243777020846],
-  fov: 65,
-};
+useGLTF.setDecoderPath(`${BASE_URL}draco/`);
 
 export const App = () => {
   const captureRef = useRef(null);
-  const { videoRef, isActive, toggle } = useCamera();
+  const { videoRef, isActive, toggle } = useCameraFeed();
 
   return (
     <>
       <Canvas
         gl={{ preserveDrawingBuffer: true }}
         shadows
-        camera={cameraArgs}
+        camera={initialCameraPos}
         style={{ position: 'fixed', inset: 0, width: '100vw', height: '100vh' }}
       >
         <Suspense fallback={null}>

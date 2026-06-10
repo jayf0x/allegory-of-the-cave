@@ -1,9 +1,10 @@
 import { memo, useEffect } from 'react';
 import { useGLTF } from '@react-three/drei';
 import { folder, useControls } from 'leva';
+import { BASE_URL } from '@/config';
 import { SCENE_CONFIG as C } from '../config';
 
-const MODEL = `${import.meta.env.BASE_URL}models/wall.glb`;
+const MODEL = `${BASE_URL}models/wall.glb`;
 
 useGLTF.preload(MODEL);
 

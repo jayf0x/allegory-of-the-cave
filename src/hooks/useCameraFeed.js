@@ -1,6 +1,6 @@
 import { useCallback, useEffect, useRef, useState } from 'react';
 
-export function useCamera() {
+export const useCameraFeed = () => {
   const videoRef = useRef(null);
   const streamRef = useRef(null);
   const [isActive, setIsActive] = useState(false);
@@ -43,4 +43,4 @@ export function useCamera() {
   }, []);
 
   return { videoRef, isActive, toggle };
-}
+};

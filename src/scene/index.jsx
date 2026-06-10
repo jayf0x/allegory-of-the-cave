@@ -2,6 +2,7 @@ import { useImperativeHandle, useRef } from 'react';
 import { Environment, Preload } from '@react-three/drei';
 import { useSetAtom } from 'jotai';
 import { folder, useControls } from 'leva';
+import { BASE_URL } from '@/config';
 import { historyAtom } from '../store/cave';
 import { devLog } from '../utils';
 import { Ground } from './Ground';
@@ -55,7 +56,7 @@ export const Scene = ({ videoRef, isActive, captureRef }) => {
   return (
     <>
       <color attach="background" args={['#080604']} />
-      <Environment files={`${import.meta.env.BASE_URL}stars.hdr`} background />
+      <Environment files={`${BASE_URL}stars.hdr`} background />
 
       <fogExp2 attach="fog" args={[fogColor, fogDensity]} />
 

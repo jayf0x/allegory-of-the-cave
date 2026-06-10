@@ -1,6 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { useGLTF } from '@react-three/drei';
 import { InstancedMesh, MathUtils, Object3D } from 'three';
+import { BASE_URL } from '@/config';
 import { cpuVnoise } from './noiseUtils';
 
 export function GrassShrubs({
@@ -11,7 +12,7 @@ export function GrassShrubs({
   scaleMax = 1.65,
 }) {
   count = 2000;
-  const { scene: gltfScene } = useGLTF(`${import.meta.env.BASE_URL}models/grass-shurbs.glb`);
+  const { scene: gltfScene } = useGLTF(`${BASE_URL}models/grass-shurbs.glb`);
   const groupRef = useRef();
 
   useEffect(() => {
@@ -59,4 +60,4 @@ export function GrassShrubs({
   return <group ref={groupRef} />;
 }
 
-useGLTF.preload(`${import.meta.env.BASE_URL}models/grass-shurbs.glb`);
+useGLTF.preload(`${BASE_URL}models/grass-shurbs.glb`);

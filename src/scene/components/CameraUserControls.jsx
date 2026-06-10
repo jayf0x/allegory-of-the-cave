@@ -1,7 +1,7 @@
 import { useEffect, useRef } from 'react';
 import { OrbitControls } from '@react-three/drei';
 import { useThree } from '@react-three/fiber';
-import { isDevelopment } from '@/utils';
+import { useApp } from '@/hooks/useApp';
 
 // Azimuth = horizontal (left/right), polar = vertical (up/down)
 // All angles in radians. Adjust these to taste.
@@ -15,9 +15,10 @@ const CAM_LIMITS = {
 export const CameraUserControls = () => {
   const { camera } = useThree();
   const controlsRef = useRef();
+  const { isDevMode } = useApp();
 
   useEffect(() => {
-    if (!isDevelopment) return;
+    if (!isDevMode) return;
     window.camera = camera;
     window.controls = controlsRef.current;
 
@@ -30,7 +31,7 @@ export const CameraUserControls = () => {
 
     window.addEventListener('keydown', onKey);
     return () => window.removeEventListener('keydown', onKey);
-  }, [camera]);
+  }, [camera, isDevMode]);
 
   return (
     <OrbitControls
