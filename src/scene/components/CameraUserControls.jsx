@@ -6,10 +6,10 @@ import { useApp } from '@/hooks/useApp';
 // Azimuth = horizontal (left/right), polar = vertical (up/down)
 // All angles in radians. Adjust these to taste.
 const CAM_LIMITS = {
-  minAzimuth: -Math.PI / 10, // ~18° left
-  maxAzimuth: Math.PI / 10, // ~18° right
-  minPolar: Math.PI / 2 - 1.18, // ~10° up from horizon
-  maxPolar: Math.PI / 2 + 0.1, // ~6° down from horizon
+  minAzimuthAngle: -Math.PI / 10, // ~18° left
+  maxAzimuthAngle: Math.PI / 10, // ~18° right
+  minPolarAngle: Math.PI / 2 - 1.18, // ~10° up from horizon
+  maxPolarAngle: Math.PI / 2 + 0.1, // ~6° down from horizon
 };
 
 export const CameraUserControls = () => {
@@ -38,11 +38,8 @@ export const CameraUserControls = () => {
       ref={controlsRef}
       enablePan={false}
       enableZoom={false}
-      rotateSpeed={0.1}
-      minAzimuthAngle={CAM_LIMITS.minAzimuth}
-      maxAzimuthAngle={CAM_LIMITS.maxAzimuth}
-      minPolarAngle={CAM_LIMITS.minPolar}
-      maxPolarAngle={CAM_LIMITS.maxPolar}
+      rotateSpeed={isDevMode ? undefined : 0.1}
+      {...(isDevMode ? {} : CAM_LIMITS)}
     />
   );
 };
