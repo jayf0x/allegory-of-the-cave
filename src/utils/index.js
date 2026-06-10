@@ -1,4 +1,4 @@
-export const IS_DEV = true;
+export const isDevelopment = import.meta.env.DEV;
 
 export const devLog = (...args) => IS_DEV && console.warn('[DEV]', ...args);
 
@@ -9,5 +9,3 @@ export const isBase64 = (str) => {
     return false;
   }
 };
-
-export const isDevelopment = () => IS_DEV;

@@ -17,7 +17,7 @@ export const CameraUserControls = () => {
   const controlsRef = useRef();
 
   useEffect(() => {
-    if (!isDevelopment()) return;
+    if (!isDevelopment) return;
     window.camera = camera;
     window.controls = controlsRef.current;
 
