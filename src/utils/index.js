@@ -1,6 +1,6 @@
-const isDevelopment = true;
+export const IS_DEV = true;
 
-export const devLog = (...args) => isDevelopment && console.warn('[DEV]', ...args);
+export const devLog = (...args) => IS_DEV && console.warn('[DEV]', ...args);
 
 export const isBase64 = (str) => {
   try {
@@ -9,3 +9,5 @@ export const isBase64 = (str) => {
     return false;
   }
 };
+
+export const isDevelopment = () => IS_DEV;

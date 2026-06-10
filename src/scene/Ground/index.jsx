@@ -1,4 +1,3 @@
-import { GrassShrubs } from './GrassShrubs';
 import { SoilFloor } from './SoilFloor';
 
 // ─────────────────────────────────────────────────────────────────────────────
@@ -50,7 +49,7 @@ export function Ground({
           colorTip={colorTip}
         />
       )} */}
-
+      {/* 
       {enableShrubs && (
         <GrassShrubs
           count={shrubCount}
@@ -59,7 +58,7 @@ export function Ground({
           scaleMin={shrubScaleMin}
           scaleMax={shrubScaleMax}
         />
-      )}
+      )} */}
     </group>
   );
 }

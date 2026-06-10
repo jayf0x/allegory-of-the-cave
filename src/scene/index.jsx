@@ -1,14 +1,14 @@
-import { useCallback, useEffect, useImperativeHandle, useRef } from 'react';
-import { Environment, OrbitControls, Preload } from '@react-three/drei';
-import { useThree } from '@react-three/fiber';
+import { useImperativeHandle, useRef } from 'react';
+import { Environment, Preload } from '@react-three/drei';
 import { useSetAtom } from 'jotai';
 import { folder, useControls } from 'leva';
 import { historyAtom } from '../store/cave';
 import { devLog } from '../utils';
-import { Ground } from './Ground/Ground';
+import { Ground } from './Ground';
 import { Lighting } from './Lighting';
 import { ProjectedSurface } from './ProjectedSurface';
 import { Wall } from './Wall/Wall';
+import { CameraUserControls } from './components/CameraUserControls';
 import { SCENE_CONFIG as C } from './config';
 
 export const Scene = ({ videoRef, isActive, captureRef }) => {
@@ -59,9 +59,7 @@ export const Scene = ({ videoRef, isActive, captureRef }) => {
 
       <fogExp2 attach="fog" args={[fogColor, fogDensity]} />
 
-      {/* <OrbitControls /> */}
-
-      <CameraDebugger />
+      <CameraUserControls />
 
       <Lighting surfaceRef={surfaceRef} />
 
@@ -75,33 +73,3 @@ export const Scene = ({ videoRef, isActive, captureRef }) => {
     </>
   );
 };
-
-function CameraDebugger() {
-  const { camera } = useThree();
-  const controlsRef = useRef();
-
-  useEffect(() => {
-    window.camera = camera;
-    window.controls = controlsRef.current;
-
-    // press "p" to print current values
-    const onKey = (e) => {
-      if (e.key === 'p') {
-        console.log('camera position', camera.position);
-        console.log('camera rotation', camera.rotation);
-        console.log('controls target', controlsRef.current.target);
-
-        console.log(camera.position.toArray());
-        console.log(controls.target.toArray());
-      }
-    };
-
-    window.addEventListener('keydown', onKey);
-
-    return () => {
-      window.removeEventListener('keydown', onKey);
-    };
-  }, [camera]);
-
-  return <OrbitControls ref={controlsRef} />;
-}

@@ -155,7 +155,9 @@ export function Fire() {
     [],
   );
 
+  const frameCount = useRef(0);
   useFrame(({ gl, clock }) => {
+    if (frameCount.current++ % 5 !== 0) return;
     const { target, scene, cam, mat } = gpu.current ?? {};
     if (!target) return;
     mat.uniforms.uTime.value = clock.getElapsedTime();
@@ -189,8 +191,6 @@ export function Fire() {
         color="#ff6a00"
         distance={8}
         decay={2}
-        castShadow
-        shadow-mapSize={[512, 512]}
       />
     </>
   );

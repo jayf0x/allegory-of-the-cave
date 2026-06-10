@@ -81,10 +81,10 @@ function makeRT(w, h) {
   });
 }
 
-const BLUR_W = 1024,
-  BLUR_H = 512;
-const GOBO_W = 2048,
-  GOBO_H = 1024;
+const BLUR_W = 512,
+  BLUR_H = 256;
+const GOBO_W = 1024,
+  GOBO_H = 512;
 
 /**
  * ProjectedSurface — gobo scene → H+V Gaussian blur → temporal accumulation.
