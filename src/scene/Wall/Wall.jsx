@@ -26,6 +26,7 @@ export const Wall = memo(() => {
       if (child.isMesh) {
         child.castShadow = false;
         child.receiveShadow = true;
+        child.layers.enable(1); // receive projector spotlight (layer 1)
         if (child.material) {
           child.material.depthTest = true;
           child.material.depthWrite = true;

@@ -40,6 +40,9 @@ export const Lighting = ({ surfaceRef }) => {
     if (!spot || !tgt) return;
     spot.target = tgt;
     tgt.updateMatrixWorld();
+    // Layer 1 only — projector light affects only objects with layer 1 enabled (Wall).
+    // Fire/ambient stay on layer 0 so they illuminate everything normally.
+    // spot.layers.set(1);
   }, []);
 
   return (
