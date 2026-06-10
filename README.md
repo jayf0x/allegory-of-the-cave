@@ -1,6 +1,12 @@
 # Allegory of the Cave
 
+> 👷 DEPRECATED. 👉 [Version 2.0](https://github.com/jayf0x/allegory-2.0)
+>
+> > reason: Too complex/much.
+
 > _Prisoners in Plato's cave mistake shadows on the wall for reality. The shadows are all they know._
+
+![preview](./assets/preview.png)
 
 This project asks: what if an AI only ever perceives shadows?
 
