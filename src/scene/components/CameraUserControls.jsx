@@ -36,8 +36,8 @@ export const CameraUserControls = () => {
   return (
     <OrbitControls
       ref={controlsRef}
-      enablePan={false}
-      enableZoom={false}
+      enablePan={isDevMode}
+      enableZoom={isDevMode}
       rotateSpeed={isDevMode ? undefined : 0.1}
       {...(isDevMode ? {} : CAM_LIMITS)}
     />

@@ -7,7 +7,8 @@
 | Node | File | Notes |
 |------|------|-------|
 | Wall GLB | `src/scene/Wall/Wall.jsx` | loads `public/models/wall.glb`; static, receives shadow |
-| Ground | `src/scene/Ground/index.jsx` | SoilFloor only active; GrassBlades + GrassShrubs commented out |
+| Ground | `src/scene/Ground/index.jsx` | SoilFloor + GrassShrubs active; GrassBlades commented out |
+| GrassShrubs | `src/scene/Ground/GrassShrubs.jsx` | GLB instancing, 600 instances; spawn zone defined by ZONE constant (z: -2.5→0.3); scale shrinks near camera |
 | Fire | `src/scene/Lighting/Fire.jsx` | custom GLSL flame → 512×512 RT → spotLight gobo + pointLight |
 | Projector spotlight | `src/scene/Lighting/Sun.jsx` | spotlight that reads gobo from ProjectedSurface |
 | Lighting | `src/scene/Lighting/index.jsx` | composes Fire + Sun; flicker in useFrame |

@@ -8,7 +8,6 @@ import {
   MeshStandardMaterial,
   Vector2,
 } from 'three';
-import { cpuVnoise } from './noiseUtils';
 
 function buildBladeGeometry(segments = 8) {
   const positions = [],

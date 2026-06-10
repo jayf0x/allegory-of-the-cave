@@ -21,7 +21,7 @@ export const Sun = ({ spotRef }) => {
       angle={lightAngle}
       penumbra={lightPenumbra}
       castShadow
-      shadow-mapSize={[2048, 2048]}
+      shadow-mapSize={[1024, 1024]}
       shadow-bias={-0.001}
       color="#fff5d6"
     />
